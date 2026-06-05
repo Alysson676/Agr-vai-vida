@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para a Rafa ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --primary-black: #0a0a0a;
+            --secondary-black: #1a1a1a;
+            --card-black: #111111;
+            --accent-red: #ff0040;
+            --deep-red: #cc0033;
+            --dark-red: #990026;
+            --neon-red: #ff1744;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --white: #ffffff;
+            --glass-bg: rgba(17, 17, 17, 0.8);
+            --glass-border: rgba(255, 0, 64, 0.3);
+            
+            /* Variável para o nome - MUDE AQUI! */
+            --girlfriend-name: "Venus"; /* ← COLOQUE O NOME AQUI */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 50%, #2a0a0a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            cursor: none;
+        }
+
+        /* Cursor personalizado dark */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, var(--accent-red), var(--deep-red));
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            box-shadow: 0 0 20px var(--accent-red);
+            border: 2px solid var(--neon-red);
+        }
+
+        .cursor-trail {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 0, 64, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        /* Partículas vermelhas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, var(--accent-red), transparent);
+            border-radius: 50%;
+            animation: float-particle 8s linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Efeito de ondas dark */
+        .wave-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 64, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(204, 0, 51, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(153, 0, 38, 0.1) 0%, transparent 50%);
+            animation: wave-move 10s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        @keyframes wave-move {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(3deg); }
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header dark theme */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            animation: slideDown 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-red), var(--gold), var(--accent-red));
+            border-radius: 2px;
+            animation: glow-line 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow-line {
+            0% { box-shadow: 0 0 5px var(--accent-red); }
+            100% { box-shadow: 0 0 25px var(--accent-red), 0 0 35px var(--neon-red); }
+        }
+
+        .header h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent-red), var(--gold), var(--neon-red), var(--silver));
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease infinite, text-glow 2s ease-in-out infinite alternate;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes text-glow {
+            0% { filter: drop-shadow(0 0 10px var(--accent-red)); }
+            100% { filter: drop-shadow(0 0 25px var(--accent-red)) drop-shadow(0 0 35px var(--neon-red)); }
+        }
+
+        .header p {
+            font-size: 1.4rem;
+            color: var(--silver);
+            font-weight: 300;
+            letter-spacing: 1px;
+            animation: pulse-text 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Nome da namorada */
+        .girlfriend-name::before {
+            content: var(--girlfriend-name);
+        }
+
+        /* Card principal dark theme melhorado */
+        .love-card {
+            background: linear-gradient(135deg, 
+                rgba(17, 17, 17, 0.95) 0%, 
+                rgba(26, 26, 26, 0.9) 50%, 
+                rgba(17, 17, 17, 0.95) 100%);
+            backdrop-filter: blur(30px);
+            border-radius: 25px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.8),
+                inset 0 1px 0 rgba(255, 0, 64, 0.3),
+                0 0 40px rgba(255, 0, 64, 0.15),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 0, 64, 0.4);
+            animation: card-float 8s ease-in-out infinite;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .love-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.9),
+                inset 0 1px 0 rgba(255, 0, 64, 0.4),
+                0 0 60px rgba(255, 0, 64, 0.25),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 0, 64, 0.6);
+        }
+
+        @keyframes card-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .love-card h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--white), var(--silver), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            animation: title-shine 2s ease-in-out infinite;
+        }
+
+        .love-message {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: var(--silver);
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Seção Interativa Universos / Curiosidades */
+        .space-box {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px dashed var(--glass-border);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .space-box h4 {
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .space-btn {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent-red);
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .space-btn:hover {
+            background: var(--accent-red);
+            box-shadow: 0 0 15px var(--accent-red);
+        }
+
+        #fact-display {
+            font-size: 1.1rem;
+            color: var(--silver);
+            font-style: italic;
+            min-height: 50px;
+        }
+
+        /* Seção do Mini Game */
+        .game-box {
+            background: rgba(15, 15, 15, 0.95);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 25px;
+            padding: 30px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .game-box h3 {
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        #game-area {
+            width: 100%;
+            height: 300px;
+            background: #050505;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #222;
+            margin-top: 15px;
+        }
+
+        .game-target {
+            position: absolute;
+            font-size: 2rem;
+            cursor: pointer;
+            user-select: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(320px); opacity: 0; }
+        }
+
+        #game-score {
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        /* NOVO PLAYER DE AUDIO DE PLAYLIST */
+        .audio-player-container {
+            position: fixed;
+            bottom: 30px;
+            left: 20px;
+            z-index: 10001;
+            background: rgba(17, 17, 17, 0.95);
+            border: 1px solid var(--accent-red);
+            padding: 12px 20px;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-shadow: 0 0 20px rgba(255, 0, 64, 0.4);
+            width: 260px;
+            backdrop-filter: blur(10px);
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .audio-btn {
+            background: var(--accent-red);
+            border: none;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .audio-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--neon-red);
+        }
+
+        .audio-btn.small {
+            width: 30px;
+            height: 30px;
+            font-size: 0.8rem;
+            background: #333;
+        }
+
+        .audio-info {
+            text-align: center;
+        }
+
+        .audio-text {
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .audio-subtext {
+            color: var(--silver);
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+
+        /* Botão original da surpresa */
+        .surprise-btn {
+            background: linear-gradient(45deg, var(--accent-red), var(--deep-red));
+            color: var(--white);
+            border: none;
+            padding: 25px 50px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: 60px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(255, 0, 64, 0.4);
+            animation: btn-pulse 3s ease-in-out infinite;
+            border: 2px solid var(--neon-red);
+        }
+
+        .surprise-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(255, 0, 64, 0.6), 0 0 30px var(--gold);
+        }
+
+        @keyframes btn-pulse {
+            0%, 100% { box-shadow: 0 15px 35px rgba(255, 0, 64, 0.4); }
+            50% { box-shadow: 0 15px 35px rgba(255, 0, 64, 0.6), 0 0 20px var(--gold); }
+        }
+
+        /* Galeria de fotos[cite: 1] */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 60px 0;
+        }
+
+        .photo-frame {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--card-black) 0%, var(--secondary-black) 50%, var(--card-black) 100%);
+            border-radius: 20px;
+            padding: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(255, 0, 64, 0.4);
+        }
+
+        .photo-frame:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 0, 64, 0.4);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .photo-frame[data-fallback] {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--accent-red);
+            text-align: center;
+        }
+
+        .photo-frame[data-fallback] small {
+            font-size: 0.7rem;
+            color: var(--silver);
+            margin-top: 8px;
+        }
+
+        /* Mensagem especial dark theme */
+        .special-message {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            border: 2px solid var(--glass-border);
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: none;
+        }
+
+        .special-message.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 0, 64, 0.2);
+        }
+
+        .special-message h3 {
+            background: linear-gradient(45deg, var(--accent-red), var(--gold), var(--neon-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .special-message p {
+            color: var(--silver);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        /* Footer dark theme */
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            color: var(--silver);
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .heart-beat {
+            color: var(--accent-red);
+            animation: mega-heartbeat 1s ease-in-out infinite;
+            font-size: 2rem;
+            display: inline-block;
+        }
+
+        @keyframes mega-heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.3) rotate(5deg); }
+            50% { transform: scale(1.1) rotate(-5deg); }
+        }
+
+        .heart-explosion {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 2rem;
+            animation: heart-explode 2s ease-out forwards;
+        }
+
+        @keyframes heart-explode {
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 1; }
+            100% { transform: scale(0.5); opacity: 0; }
+        }
+
+        /* Loading dark theme */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-black), var(--secondary-black));
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeOut 2s ease-in-out 3s forwards;
+        }
+
+        .loading-heart {
+            font-size: 4rem;
+            animation: loading-pulse 1s ease-in-out infinite;
+            color: var(--accent-red);
+        }
+
+        @keyframes loading-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.5) rotate(45deg); }
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* Responsivo Mobile First */
+        @media (max-width: 480px) {
+            .header h1 { font-size: 2.8rem; }
+            .love-card { padding: 30px 20px; }
+            .photo-gallery { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .audio-player-container { bottom: 10px; left: 10px; width: 220px; padding: 8px 12px; }
+        }
+        /* Ajustes e Novos Controles do Player */
+        .audio-player-container {
+            width: 280px !important; /* Aumentado levemente para acomodar os novos itens */
+        }
+
+        .audio-progress-container, .audio-volume-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            margin: 2px 0;
+        }
+
+        .time-text {
+            color: var(--silver);
+            font-size: 0.7rem;
+            font-family: monospace;
+            min-width: 30px;
+        }
+
+        .volume-icon {
+            font-size: 0.8rem;
+            user-select: none;
+        }
+
+        /* Estilização elegante dos Sliders (Barras) */
+        .player-slider {
+            flex: 1;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #333;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .player-slider:hover {
+            background: #444;
+        }
+
+        /* Bolinha arrastável do slider */
+        .player-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-red);
+            box-shadow: 0 0 5px var(--accent-red);
+            transition: transform 0.1s;
+        }
+
+        .player-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Reprodutor de Playlist Atualizado -->
+    <div class="audio-player-container">
+        <div class="audio-info">
+            <span class="audio-text" id="track-title">Carregando...</span>
+            <span class="audio-subtext">Carregando...</span>
+        </div>
+        
+        <!-- BARRA DE PROGRESSO DA MÚSICA -->
+        <div class="audio-progress-container">
+            <span id="current-time" class="time-text">0:00</span>
+            <input type="range" id="progress-bar" value="0" max="100" class="player-slider">
+            <span id="total-duration" class="time-text">0:00</span>
+        </div>
+
+        <div class="audio-controls">
+            <button class="audio-btn small" id="prev-btn">⏮</button>
+            <button class="audio-btn" id="play-pause-btn">▶</button>
+            <button class="audio-btn small" id="next-btn">⏭</button>
+        </div>
+
+        <!-- CONTROLE DE VOLUME -->
+        <div class="audio-volume-container">
+            <span class="volume-icon">🔊</span>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.7" class="player-slider">
+        </div>
+        
+        <audio id="bg-music"></audio> 
+    </div>
+
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+    <div class="particles"></div>
+    <div class="wave-bg"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1>Para Minha <span class="girlfriend-name"></span></h1>
+            <p>A dona do meu coração, Love you! ❤️</p>
+        </header>
+
+        <main class="love-card">
+            <h2>Minha Alma Gêmea 💕</h2>
+            <div class="love-message">
+                <p><span class="girlfriend-name"></span>, sei que n namoramos, sei que esta correndo de relacionamento, mas queria fazer algo pra ti e por isso mandei antes do dia dos namorados, ja que n namoramos ainda hehe, n pense mto meu amor, vc e perfeita, eu te amo mto, sorry pela palavra.</p>
+                <br>
+                <p>Desde o primeiro dia que te vi, dia 11 de marco, eu percebi que te amaria, pq o que eu senti por vc em 1 semana de conversa, eu nunca tinha sentido em meses com ngm. E posso afirmar que amo vc, vc e a primeira que penso ao acordar e a ultima qnd vou dormir. ❤️</p>
+            </div>
+
+            <!-- Curiosidades sobre o espaço -->
+            <div class="space-box">
+                <h4>✨ Curiosidades do Universo e EU para a <span class="girlfriend-name"></span> ✨</h4>
+                <button class="space-btn" onclick="nextSpaceFact()">Descobrir Segredo Espacial</button>
+                <p id="fact-display">Clique no botão para ver um fato sobre o cosmos...</p>
+            </div>
+
+            <!-- Mini Joguinho Rápido -->
+            <div class="game-box">
+                <h3>🎮 Mini Joguinho: Colete as Estrelas <span class="girlfriend-name"></span></h3>
+                <p style="color: var(--silver); font-size: 0.9rem;">Colete 10 astros para liberar uma mensagem!</p>
+                <div id="game-score">Pontos: 0 / 10</div>
+                <div id="game-area"></div>
+            </div>
+
+            <button class="surprise-btn" onclick="showSurprise()">
+                ✨ Uma Surpresa Especial Para Você ✨
+            </button>
+
+            <div class="special-message" id="specialMessage">
+                <h3>💖 Sem pressao, apenas uma carta aberta do meu ser 💖</h3>
+                <p><span class="girlfriend-name"></span>, Desde que te beijei a primeira vez eu entendi que era vc, com quem eu quero me casar e construir uma familia. Pouco intenso haha.</p>
+                <br>
+                <p>Agradeco por tudo que faz e por me aturar, vc n e rude, eu que sou horrivel em insistir tanto, mas nunca supero meu egoismo e minha vontade em te ter para sempre. TE AMO! Abaixo minhas fotos favoritas de vc meu amor! 💝</p>
+            </div>
+        </main>
+
+        <section class="photo-gallery">
+            <div class="photo-frame">
+                <img src="img/1.jpeg" alt="Amo essa foto" onerror="this.style.display='none'; this.parentNode.innerHTML='📸<br><small>Foto 1</small>';">
+            </div>
+            <div class="photo-frame">
+                <img src="img/2.jpeg" alt="Foto especial" onerror="this.style.display='none'; this.parentNode.innerHTML='💕<br><small>Foto 2</small>';">
+            </div>
+            <div class="photo-frame">
+                <img src="img/3.jpeg" alt="Te amo" onerror="this.style.display='none'; this.parentNode.innerHTML='🌹<br><small>Foto 3</small>';">
+            </div>
+            <div class="photo-frame">
+                <img src="img/4.jpeg" alt="Vc e perfeita" onerror="this.style.display='none'; this.parentNode.innerHTML='✨<br><small>Foto 4</small>';">
+            </div>
+            <div class="photo-frame">
+                <img src="img/5.jpeg" alt="Foto único" onerror="this.style.display='none'; this.parentNode.innerHTML='💖<br><small>Foto 5</small>';">
+            </div>
+            <div class="photo-frame">
+                <img src="img/6.jpeg" alt="Smp vou te amar" onerror="this.style.display='none'; this.parentNode.innerHTML='🥰<br><small>Foto 6</small>';">
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Criado com todo <span class="heart-beat">❤️</span> do universo</p>
+            <p>Para a <span class="girlfriend-name"></span> Apenas algo simples, Logo pra ti que n tem nada de simples! 💫</p>
+            <p>E desculpa por dizer tanto a PP, espero que goste e aproveite! 💑</p>
+        </footer>
+    </div>
+
+    <script>
+        // CONFIGURAÇÃO DA SUA PLAYLIST
+        // Altere os títulos aqui dentro e garanta que os nomes dos arquivos batem com a sua pasta!
+        const playlist = [
+         { title: "Fashion 🦹", artist: "Orochi 🎙️", src: "musicas/orochi1.mp3" },
+         { title: "Agua com Acucar 🧁", artist: "Luan Santana 🎤", src: "musicas/luan3.mp3" },
+         { title: "Somos Apenas Um 👩‍❤️‍👨", artist: "Luan Santana 🎤", src: "musicas/luan7.mp3" },
+
+    ];
+
+        let currentTrackIndex = 0;
+        const bgMusic = document.getElementById('bg-music');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const trackTitle = document.getElementById('track-title');
+        const trackArtist = document.querySelector('.audio-subtext');
+        
+        // Mapeando os novos elementos de tempo e volume
+        const progressBar = document.getElementById('progress-bar');
+        const currentTimeDisplay = document.getElementById('current-time');
+        const totalDurationDisplay = document.getElementById('total-duration');
+        const volumeSlider = document.getElementById('volume-slider');
+
+        // Configura o volume inicial do player baseado no slider
+        bgMusic.volume = volumeSlider.value;
+       
+        function loadTrack(index) {
+            bgMusic.src = playlist[index].src;
+            trackTitle.textContent = playlist[index].title;
+            trackArtist.textContent = playlist[index].artist;
+            
+            // Reseta a barra de tempo ao trocar de faixa
+            progressBar.value = 0;
+            currentTimeDisplay.textContent = "0:00";
+            totalDurationDisplay.textContent = "0:00";
+        }
+
+        function playTrack() {
+            bgMusic.play().catch(e => console.log("O navegador bloqueou o autoplay, clique em Play."));
+            playPauseBtn.textContent = '⏸';
+        }
+
+        function pauseTrack() {
+            bgMusic.pause();
+            playPauseBtn.textContent = '▶';
+        }
+
+        playPauseBtn.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                playTrack();
+            } else {
+                pauseTrack();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            playTrack();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+            loadTrack(currentTrackIndex);
+            playTrack();
+        });
+
+        bgMusic.addEventListener('ended', () => {
+            currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+            loadTrack(currentTrackIndex);
+            playTrack();
+        });
+
+        // --- LÓGICA DO TEMPO E VOLUME ---
+
+        // Atualiza a barra de progresso e o cronômetro enquanto a música toca
+        bgMusic.addEventListener('timeupdate', () => {
+            if (!isNaN(bgMusic.duration)) {
+                const progress = (bgMusic.currentTime / bgMusic.duration) * 100;
+                progressBar.value = progress;
+                currentTimeDisplay.textContent = formatTime(bgMusic.currentTime);
+            }
+        });
+
+        // Carrega a duração total assim que o arquivo de áudio é lido
+        bgMusic.addEventListener('loadedmetadata', () => {
+            totalDurationDisplay.textContent = formatTime(bgMusic.duration);
+        });
+
+        // Permite clicar e arrastar a barra para avançar ou voltar a música
+        progressBar.addEventListener('input', () => {
+            if (!isNaN(bgMusic.duration)) {
+                const seekTime = (progressBar.value / 100) * bgMusic.duration;
+                bgMusic.currentTime = seekTime;
+            }
+        });
+
+        // Controla o volume em tempo real
+        volumeSlider.addEventListener('input', () => {
+            bgMusic.volume = volumeSlider.value;
+        });
+
+        // Função para transformar segundos puros no formato MM:SS
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "0:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // Inicializar player com a primeira música
+        loadTrack(currentTrackIndex);
+
+
+        // Curiosidades do Espaço Dinâmicas
+        const spaceFacts = [
+            "Vênus é o planeta mais quente do sistema solar, com temperaturas que passam de 450°C. Assim como você, ele tem um brilho intensamente radiante que se destaca no céu noturno! 🌟",
+            "Um dia em Vênus é mais longo do que um ano inteiro no planeta. Isso significa que o tempo passa diferente por lá, assim como as horas voam quando converso com você. 🌌",
+            "Diferente da maioria dos planetas, Vênus gira no sentido horário. Ele segue seu próprio ritmo e regras, perfeitamente único no universo, igualzinho a você. ✨",
+            "O espaço é completamente silencioso porque não há atmosfera para o som viajar. Mas se o universo pudesse falar, com certeza sussurraria o quanto você é incrível. 🪐",
+            "As estrelas que vemos à noite estão tão distantes que estamos olhando para o passado. Mas o que sinto por você pertence inteiramente ao presente e ao futuro. 🌠",
+            "Voce sabia? que eu AMO vc?, tipo papo de casamento, viver juntos e tals, Ja pensou o tanto que seria bom?, pensa ai, e vms casar logo, sdds de ti minha vida!❤️❤️❤️❤️",
+            "Tem dias que eu só quero ficar parado te olhando, admirando e amando, vc tira todo meu cansado e me motiva a ser melhor, afinal vc merece o melhor que posso oferecer!🌚",
+            "Orbitar um buraco negro, faz com que o tempo passe mais lento para quem esta no buraco negro, logo aqui na terra poderia ter passado decadas ou seculos, e assim que me sinto com vc, parece que te amo a anos, talvez eu esteja orbitando um buraco negro.♥♥",
+            "Obrigado por ser sincera comigo, e me amar, prometo nunca parar de fazer o meu melhor, seja uma flor em uma tarde qlqr, ou demostrando para todos e principalmente para vc, o quanto eu te amo e smp vou amar❤!",
+            "As vezes tenho medo da minha intesidade, em te sufocar, amar demais, entao tem dias que tento ser menos, tento ser normal, mas como fazer isso?, se vc merece o meu melhor?, o meu mais puro amor?",
+            "Odeio ser assim, tentar demais, sufocar todos, acho que e por isso que sempre fui mais na minha, te amo vida, espero que essa minha loucura e intesidade n te assuste."
+        ];
+        let currentFactIndex = 0;
+
+        function nextSpaceFact() {
+            currentFactIndex = (currentFactIndex + 1) % spaceFacts.length;
+            document.getElementById('fact-display').textContent = spaceFacts[currentFactIndex];
+            createHeartExplosion();
+        }
+
+        // Sistema do Mini-Game "Pegue as Estrelas"
+        const gameArea = document.getElementById('game-area');
+        const gameScoreDisplay = document.getElementById('game-score');
+        let score = 0;
+        let gameInterval;
+
+        function spawnTarget() {
+            if (score >= 10) {
+                clearInterval(gameInterval);
+                return;
+            }
+            const target = document.createElement('div');
+            target.className = 'game-target';
+            const items = ['⭐', '💖', '✨', '🚀', '🪐'];
+            target.textContent = items[Math.floor(Math.random() * items.length)];
+            
+            target.style.left = Math.random() * (gameArea.clientWidth - 30) + 'px';
+            target.style.top = '0px';
+            
+            const duration = Math.random() * 2 + 1.5;
+            target.style.animation = `fall ${duration}s linear forwards`;
+            
+            target.addEventListener('click', () => {
+                score++;
+                gameScoreDisplay.textContent = `Pontos: ${score} / 10`;
+                target.remove();
+                
+                if (score === 10) {
+                    gameScoreDisplay.innerHTML = "🎉 Parabéns! Você coletou os astros mais lindos do universo e o meu ❤️!";
+                    showAchievement('🚀 Exploradora Cósmica!', 'Você conquistou o coração do jogo!');
+                    showSurprise(); 
+                }
+            });
+
+            gameArea.appendChild(target);
+            setTimeout(() => target.remove(), duration * 1000);
+        }
+
+        gameInterval = setInterval(spawnTarget, 800);
+
+        // Cursor personalizado original
+        let cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+            
+            if (Math.random() > 0.8) {
+                let trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX - 3 + 'px';
+                trail.style.top = e.clientY - 3 + 'px';
+                document.body.appendChild(trail);
+                setTimeout(() => trail.remove(), 1000);
+            }
+        });
+
+        // Partículas vermelhas contínuas
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 6 + 4) + 's';
+            
+            const redColors = ['rgba(255, 0, 64, 0.8)', 'rgba(204, 0, 51, 0.8)', 'rgba(255, 215, 0, 0.6)'];
+            particle.style.background = `radial-gradient(circle, ${redColors[Math.floor(Math.random() * redColors.length)]}, transparent)`;
+            
+            document.querySelector('.particles').appendChild(particle);
+            setTimeout(() => particle.remove(), 10000);
+        }
+        setInterval(createParticle, 300);
+
+        function showSurprise() {
+            const message = document.getElementById('specialMessage');
+            message.classList.add('show');
+            createHeartExplosion();
+            createTeAmoAnimation();
+            
+            document.body.style.background = 'linear-gradient(135deg, #ff0040, #990026, #000000, #ff1744)';
+            setTimeout(() => {
+                document.body.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a0a0a 100%)';
+            }, 4000);
+        }
+
+        function createTeAmoAnimation() {
+            const mainTeAmo = document.createElement('div');
+            mainTeAmo.innerHTML = 'EU TE AMO ❤️';
+            mainTeAmo.style.cssText = `
+                position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                font-size: 4rem; font-weight: bold; background: linear-gradient(45deg, #ff0040, #ffd700, #ff0040);
+                -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+                z-index: 9999; pointer-events: none; animation: te-amo-main 4s ease-out forwards;
+            `;
+            document.body.appendChild(mainTeAmo);
+            setTimeout(() => mainTeAmo.remove(), 4000);
+        }
+
+        function createHeartExplosion() {
+            const hearts = ['❤️', '💖', '💕', '✨', '💝'];
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-explosion';
+                heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.top = Math.random() * window.innerHeight + 'px';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 2000);
+            }
+        }
+
+        function showAchievement(title, description) {
+            const achievement = document.createElement('div');
+            achievement.innerHTML = `<div style="font-size: 1.2rem; font-weight: bold;">${title}</div><div>${description}</div>`;
+            achievement.style.cssText = `
+                position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+                background: linear-gradient(45deg, #ff0040, #990026); color: white;
+                padding: 15px 25px; border-radius: 15px; z-index: 99999; text-align: center;
+                box-shadow: 0 10px 30px rgba(255,0,64,0.5); animation: fadeOut 3s forwards;
+            `;
+            document.body.appendChild(achievement);
+            setTimeout(() => achievement.remove(), 3000);
+        }
+
+        // Sistema de som visualizador
+        function createSoundWave() {
+            const wave = document.createElement('div');
+            wave.style.cssText = `
+                position: fixed; bottom: 20px; left: ${20 + (document.querySelectorAll('.sound-wave-bar').length * 6)}px;
+                width: 4px; height: ${Math.random() * 40 + 10}px; background: linear-gradient(to top, #ff0040, #ffd700);
+                border-radius: 2px; animation: sound-wave 0.5s ease-in-out infinite alternate; z-index: 1000;
+            `;
+            wave.className = 'sound-wave-bar';
+            document.body.appendChild(wave);
+            setTimeout(() => wave.remove(), 1000);
+        }
+        setInterval(createSoundWave, 200);
+    </script>
+</body>
+</html>
